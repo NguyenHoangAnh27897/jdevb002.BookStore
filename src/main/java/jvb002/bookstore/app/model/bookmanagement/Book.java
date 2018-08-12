@@ -1,5 +1,5 @@
 package jvb002.bookstore.app.model.bookmanagement;
 
-public class BookModel {
+public class Book {
 
 }
