@@ -6,6 +6,9 @@
  */
 package jvb002.bookstore.app.util;
 
+import jvb002.bookstore.app.dto.UserVO;
+import jvb002.bookstore.app.model.usermanagement.User;
+
 /**
  * @author User
  *
@@ -37,7 +40,15 @@ public class ConvertUtils {
 	 * @param UserVO
 	 * @return object Use
 	 */
-	public static void convertUserVOToUser() {
+	public static User convertUserVOToUser(UserVO userVO) {
+		User user = new User();
+		user.setUserName(userVO.getUserName());
+		user.setPassword(userVO.getPassword());
+		user.setRole(userVO.getRole());
+		user.setFullName(userVO.getFullName());
+		user.setCreatedUserId(userVO.getCreatedUserId());
+		user.setCreatedDate(userVO.getCreatedDate());
+		return user;
 	}
 
 	/**
@@ -46,8 +57,9 @@ public class ConvertUtils {
 	 * @param User
 	 * @return object UseVO
 	 */
-	public static void convertUserToUserVO() {
-
+	public static UserVO convertUserToUserVO(User user) {
+		UserVO userVO = new UserVO();
+		return userVO;
 	}
 
 }
