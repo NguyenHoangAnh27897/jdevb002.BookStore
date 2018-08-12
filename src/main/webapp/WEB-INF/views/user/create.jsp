@@ -7,7 +7,7 @@
 <title>Register User</title>
 </head>
 <body>
-	<form>
+	<form id="frmRegister" >
 		<table>
 			<tr>
 				<td><label>Username : </label></td>
@@ -22,8 +22,8 @@
 				<td><input type="text" id="fullName"/></td>
 			</tr>
 			<tr>
-				<button type="submit" id="save">Save</button>
-				<button type="reset" id="reset">Rest Form</button>
+				<td><button type="submit" id="save">Save</button></td>
+				<td><button type="reset" id="reset">Rest Form</button></td>
 			</tr>
 		</table>
 	</form>
