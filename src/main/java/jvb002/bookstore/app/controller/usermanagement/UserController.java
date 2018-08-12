@@ -24,6 +24,6 @@ public class UserController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome user! The client locale is {}.", locale);
 		
-		return "user/create";
+		return "bookstore/user/create";
 	}
 }
