@@ -41,7 +41,6 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<!-- <beans:value>xxx.Book</beans:value> -->
 				<beans:value>jvb002.bookstore.app.model.bookmanagement.Book</beans:value>
 				<beans:value>jvb002.bookstore.app.model.bookmanagement.Upload</beans:value>
 				<beans:value>jvb002.bookstore.app.model.classification.Category</beans:value>
