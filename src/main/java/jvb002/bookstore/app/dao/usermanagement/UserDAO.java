@@ -1,5 +1,5 @@
 package jvb002.bookstore.app.dao.usermanagement;
 
-public class UserDAO {
+public interface UserDAO {
 
 }

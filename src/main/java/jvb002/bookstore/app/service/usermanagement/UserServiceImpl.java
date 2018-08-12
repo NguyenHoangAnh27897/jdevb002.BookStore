@@ -1,5 +1,5 @@
 package jvb002.bookstore.app.service.usermanagement;
 
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
 }
