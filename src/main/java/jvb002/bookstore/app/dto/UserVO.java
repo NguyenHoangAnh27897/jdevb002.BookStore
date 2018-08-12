@@ -10,17 +10,6 @@ public class UserVO {
 	private int createdUserId;
 	private String createdDate;
 	
-	public UserVO(int id) {
-		this.id = id;
-	}
-	
-	public UserVO(int id, String userName, String password, int role) {
-		this.id = id;
-		this.userName = userName;
-		this.password = password;
-		this.role = role;
-	}
-	
 	public int getId() {
 		return id;
 	}

@@ -30,17 +30,6 @@ public class User {
 	@Column(name = "Created_Date")
 	private String createdDate;
 	
-	public User(int id) {
-		this.id = id;
-	}
-	
-	public User(int id, String userName, String password, int role) {
-		this.id = id;
-		this.userName = userName;
-		this.password = password;
-		this.role = role;
-	}
-	
 	public int getId() {
 		return id;
 	}
