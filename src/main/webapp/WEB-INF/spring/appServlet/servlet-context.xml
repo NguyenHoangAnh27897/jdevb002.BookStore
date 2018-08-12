@@ -42,6 +42,11 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<!-- <beans:value>xxx.Book</beans:value> -->
+				<beans:value>jvb002.bookstore.app.model.bookmanagement.Book</beans:value>
+				<beans:value>jvb002.bookstore.app.model.bookmanagement.Upload</beans:value>
+				<beans:value>jvb002.bookstore.app.model.classification.Category</beans:value>
+				<beans:value>jvb002.bookstore.app.model.publishermanagement.Publisher</beans:value>
+				<beans:value>jvb002.bookstore.app.model.usermanagement.User</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -54,7 +59,7 @@
 	</beans:bean>
 	
 	<beans:bean id = "hibernateTemplate" class = "org.springframework.orm.hibernate4.HibernateTemplate">
-	<beans:property name = "sessionFactory" ref ="sessionFactory"/>
+		<beans:property name = "sessionFactory" ref ="sessionFactory"/>
 	</beans:bean>
 	<!-- User Login  -->
 	
@@ -67,6 +72,10 @@
 	<!-- Publisher management -->
 
 	<context:component-scan base-package="jvb002.bookstore.app" />
+	<context:component-scan base-package="jvb002.bookstore.app.controller.bookmanagement" />
+	<context:component-scan base-package="jvb002.bookstore.app.controller.classification" />
+	<context:component-scan base-package="jvb002.bookstore.app.controller.publishermanagement" />
+	<context:component-scan base-package="jvb002.bookstore.app.controller.usermanagement" />
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
