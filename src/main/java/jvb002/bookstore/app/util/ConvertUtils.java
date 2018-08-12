@@ -6,8 +6,6 @@
  */
 package jvb002.bookstore.app.util;
 
-import jvb002.bookstore.app.model.usermanagement.*;
-
 /**
  * @author User
  *
