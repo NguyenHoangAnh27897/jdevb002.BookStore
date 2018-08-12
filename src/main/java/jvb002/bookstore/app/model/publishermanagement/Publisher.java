@@ -31,8 +31,6 @@ public class Publisher {
 	
 	public Publisher() {
 	}
-
-
 	public Publisher(long publishID, String name, String description, int createdUserID, Date createdDate) {
 		this.publishID = publishID;
 		this.name = name;
