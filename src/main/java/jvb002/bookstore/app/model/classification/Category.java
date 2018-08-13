@@ -12,11 +12,15 @@ import javax.persistence.Table;
 public class Category {
 	@Id
 	@Column(name="categoryID")
-	int categoryID;
-	String description;
-	int category_parentID;
-	int created_userID;
-	Date created_date;
+	private int categoryID;
+	@Column(name="description")
+	private String description;
+	@Column(name="category_parentID")
+	private int category_parentID;
+	@Column(name="created_userID")
+	private int created_userID;
+	@Column(name="created_date")
+	private Date created_date;
 	public int getCategoryID() {
 		return categoryID;
 	}
