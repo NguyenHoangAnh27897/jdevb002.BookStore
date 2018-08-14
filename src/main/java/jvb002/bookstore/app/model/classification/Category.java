@@ -1,13 +1,21 @@
 package jvb002.bookstore.app.model.classification;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import jvb002.bookstore.app.model.bookmanagement.Book;
 
 @Entity
 @Table(name = "category")
@@ -24,6 +32,18 @@ public class Category {
 	private int created_userID;
 	@Column(name = "created_date")
 	private Date created_date;
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(name = "book_category", joinColumns = { @JoinColumn(name = "bookID") }, inverseJoinColumns = {
+			@JoinColumn(name = "categoryID") })
+	Set<Book> book = new HashSet<>();
+
+	public Set<Book> getBook() {
+		return book;
+	}
+
+	public void setBook(Set<Book> book) {
+		this.book = book;
+	}
 
 	public int getCategoryID() {
 		return categoryID;
