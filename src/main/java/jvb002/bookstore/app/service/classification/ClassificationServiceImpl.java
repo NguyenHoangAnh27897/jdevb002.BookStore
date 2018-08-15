@@ -1,36 +1,57 @@
 package jvb002.bookstore.app.service.classification;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
-import jvb002.bookstore.app.dao.classification.ClassificationDAO;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import jvb002.bookstore.app.dao.classification.classificationDAO;
 import jvb002.bookstore.app.model.classification.Category;
 
 @Service
 public class ClassificationServiceImpl implements ClassificationService {
 
-	private ClassificationDAO classificationDAO;
+	private classificationDAO classificationDAO;
 
-	public ClassificationDAO getClassificationDAO() {
-		return classificationDAO;
-	}
-
-	public void setClassificationDAO(ClassificationDAO classificationDAO) {
+	public void setClassificationDAO(classificationDAO classificationDAO) {
 		this.classificationDAO = classificationDAO;
 	}
 
 	@Override
 	@Transactional
-	public void addCategory(Category c) {
+	public void save(Category c) {
 		// TODO Auto-generated method stub
-		this.classificationDAO.addCategory(c);
+		classificationDAO.save(c);
 	}
 
 	@Override
 	@Transactional
-	public void updateCategory(Category c) {
+	public void update(Category c) {
 		// TODO Auto-generated method stub
-		this.classificationDAO.updateCategory(c);
+		classificationDAO.update(c);
 	}
+
+	@Override
+	@Transactional
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		classificationDAO.delete(id);
+	}
+
+	@Override
+	@Transactional
+	public Category getOne(int id) {
+		// TODO Auto-generated method stub
+		return classificationDAO.getOne(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Category> getAll() {
+		// TODO Auto-generated method stub
+		return  classificationDAO.getAll();
+	}
+
 
 }

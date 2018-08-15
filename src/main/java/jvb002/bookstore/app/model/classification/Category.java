@@ -33,9 +33,10 @@ public class Category {
 	@Column(name = "created_date")
 	private Date created_date;
 	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "book_category", joinColumns = { @JoinColumn(name = "bookID") }, inverseJoinColumns = {
-			@JoinColumn(name = "categoryID") })
-	Set<Book> book = new HashSet<>();
+	@JoinTable(name = "book_category",
+			   joinColumns = { @JoinColumn(name = "bookID") }, 
+			   inverseJoinColumns = {@JoinColumn(name = "categoryID") })
+	private Set<Book> book = new HashSet<Book>();
 
 	public Set<Book> getBook() {
 		return book;
