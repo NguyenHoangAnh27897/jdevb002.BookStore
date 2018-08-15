@@ -6,7 +6,9 @@
  */
 package jvb002.bookstore.app.util;
 
+import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.dto.UserVO;
+import jvb002.bookstore.app.model.publishermanagement.Publisher;
 import jvb002.bookstore.app.model.usermanagement.User;
 
 /**
@@ -61,5 +63,22 @@ public class ConvertUtils {
 		UserVO userVO = new UserVO();
 		return userVO;
 	}
-
+	
+	public static  Publisher convertPublisherVOToPublisher(PublisherVO publisherVO) {
+		Publisher publisher = new Publisher();
+		publisher.setName(publisherVO.getName());
+		publisher.setDescription(publisherVO.getDescription());
+		publisher.setCreatedDate(publisherVO.getCreatedDate());
+		publisher.setCreatedUserID(publisherVO.getCreatedUserID());
+		return publisher;
+	}
+	
+	public static PublisherVO convertPublisherToPublisherVO(Publisher publisher) {
+		PublisherVO publisherVO = new PublisherVO();
+		publisherVO.setName(publisher.getName());
+		publisherVO.setDescription(publisher.getDescription());
+		publisherVO.setCreatedDate(publisher.getCreatedDate());
+		publisherVO.setCreatedUserID(publisher.getCreatedUserID());
+		return publisherVO;
+	}
 }
