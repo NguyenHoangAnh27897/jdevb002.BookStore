@@ -2,9 +2,13 @@ package jvb002.bookstore.app.service.publishermanagement;
 
 import java.util.List;
 
+import jvb002.bookstore.app.dao.publishermanagement.PublisherDAO;
+import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.model.publishermanagement.Publisher;
 
-public class PublishinghouseServiceImpl implements PublishinghouseService {
+public class PublisherServiceImpl implements PublisherService {
+
+	private PublisherDAO publisherDAO;
 
 	@Override
 	public List<Publisher> getList() {
@@ -25,15 +29,16 @@ public class PublishinghouseServiceImpl implements PublishinghouseService {
 	}
 
 	@Override
-	public void create() {
-		// TODO Auto-generated method stub
-
+	public void create(PublisherVO publisherVO) {
+		publisherDAO.create(publisherVO);
 	}
 
 	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-
+	public void update(PublisherVO publisherVO) {
+		publisherDAO.update(publisherVO);
 	}
 
+	public void setPublisherDAO(PublisherDAO publisherDAO) {
+		this.publisherDAO = publisherDAO;
+	}
 }

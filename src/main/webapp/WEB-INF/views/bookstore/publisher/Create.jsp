@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Update Publisher</title>
+<title>Create Publisher</title>
 </head>
 <body>
 	<div id="content-body" align="center">
@@ -19,7 +19,7 @@
 					<td><textarea rows="3" cols="22" id="description"></textarea>
 				</tr>
 				<tr>			
-					<td><input type="submit" id="update"></td>
+					<td><input type="submit" id="create"></td>
 					<td><input type="reset"></td>
 				</tr>
 			</table>
