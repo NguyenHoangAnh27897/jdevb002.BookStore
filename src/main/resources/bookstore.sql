@@ -65,6 +65,7 @@ CREATE TABLE `book_category` (
 
 CREATE TABLE `category` (
   `CategoryID` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
   `Description` text COLLATE utf8_unicode_ci NOT NULL,
   `Category_ParentID` int(11) NOT NULL,
   `Created_UserID` int(11) NOT NULL,
