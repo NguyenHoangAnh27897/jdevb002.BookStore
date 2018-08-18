@@ -70,10 +70,11 @@ public class BookDAOImpl extends HibernateDaoSupport implements BookDAO {
 	}
 
 	@Override
-	public List<Book> getDetail() {
+	public Book getDetail(int id) {
 		// TODO Auto-generated method stub
-		DetachedCriteria criteria = DetachedCriteria.forClass(Publisher.class);
-		return (List<Book>) getHibernateTemplate().findByCriteria(criteria);
+		String sqlQuery =  "from Book where categoryID=:id";
+		Book cate  = (Book)getHibernateTemplate().find(sqlQuery,new Integer(id));
+		return cate !=null ? cate : null;
 	}
 
 }
