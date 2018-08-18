@@ -2,14 +2,15 @@ package jvb002.bookstore.app.dao.classification;
 
 import java.util.List;
 
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import jvb002.bookstore.app.model.classification.Category;
 
-@Repository
-public class ClassificationDAOImpl extends HibernateDaoSupport implements classificationDAO {
+//@Repository
+public class ClassificationDAOImpl extends HibernateDaoSupport implements ClassificationDAO {
 	
+
 	@Override
 	public void save(Category c) {
 		// TODO Auto-generated method stub
@@ -30,9 +31,10 @@ public class ClassificationDAOImpl extends HibernateDaoSupport implements classi
 
 	
 	@Override
-	public Category getOne(int id) {
+	public Category getOne(int id,Boolean parentID) {
 		// TODO Auto-generated method stub
-		Category cate  = (Category)getHibernateTemplate().find("from Category where categoryID=:id",new Integer(id));
+		String sqlQuery = (!parentID) ? "from Category where categoryID=:id" : "from Category where Category_ParentID=:id";
+		Category cate  = (Category)getHibernateTemplate().find(sqlQuery,new Integer(id));
 		return cate !=null ? cate : null;
 	
 	}

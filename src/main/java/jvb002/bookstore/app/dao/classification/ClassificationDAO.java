@@ -1,9 +1,14 @@
 package jvb002.bookstore.app.dao.classification;
 
+import java.util.List;
+
 import jvb002.bookstore.app.model.classification.Category;
 
 public interface ClassificationDAO {
-	public void addCategory(Category c);
-
-	public void updateCategory(Category c);
+	public void save(Category c);
+	public void update(Category c);
+	public void delete(int id);
+	public Category getOne(int id,Boolean parentID);
+	public List<Category> getAll();
+	
 }

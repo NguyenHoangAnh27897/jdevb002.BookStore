@@ -9,6 +9,6 @@ public interface ClassificationService {
 	public void save(Category c);
 	public void update(Category c);
 	public void delete(int id);
-	public Category getOne(int id);
+	public Category getOne(int id,Boolean parentID);
 	public List<Category> getAll();
 }

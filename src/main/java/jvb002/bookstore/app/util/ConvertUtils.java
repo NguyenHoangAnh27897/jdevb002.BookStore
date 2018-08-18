@@ -6,8 +6,10 @@
  */
 package jvb002.bookstore.app.util;
 
+import jvb002.bookstore.app.dto.CategoryVO;
 import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.dto.UserVO;
+import jvb002.bookstore.app.model.classification.Category;
 import jvb002.bookstore.app.model.publishermanagement.Publisher;
 import jvb002.bookstore.app.model.usermanagement.User;
 
@@ -80,5 +82,39 @@ public class ConvertUtils {
 		publisherVO.setCreatedDate(publisher.getCreatedDate());
 		publisherVO.setCreatedUserID(publisher.getCreatedUserID());
 		return publisherVO;
+	}
+	
+	
+	//-----------------------
+	/**
+	 * Convert UserVOToUse
+	 * 
+	 * @param UserVO
+	 * @return object Use
+	 */
+	public static Category convertCategoryVOToCategory(CategoryVO categoryVO) {
+		Category category = new Category();
+		category.setDescription(categoryVO.getDescription());
+		category.setCategory_parentID(categoryVO.getCategory_parentID());
+		category.setCreated_date(categoryVO.getCreated_date());
+		category.setCreated_userID(categoryVO.getCreated_userID());
+//		category.setBook(book);(userVO.getCreatedUserId());
+		
+		return category;
+	}
+
+	/**
+	 * Convert UserToUseVO
+	 * 
+	 * @param User
+	 * @return object UseVO
+	 */
+	public static CategoryVO convertCategoryToCategoryVO(Category category) {
+		CategoryVO categoryVO = new CategoryVO();
+		categoryVO.setDescription(category.getDescription());
+		categoryVO.setCategory_parentID(category.getCategory_parentID());
+		categoryVO.setCreated_date(category.getCreated_date());
+		categoryVO.setCreated_userID(category.getCreated_userID());
+		return categoryVO;
 	}
 }
