@@ -1,11 +1,15 @@
 package jvb002.bookstore.app.model.bookmanagement;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import jvb002.bookstore.app.model.publishermanagement.Publisher;
 
 @Entity
 @Table(name="book")
