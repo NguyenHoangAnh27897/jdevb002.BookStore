@@ -41,9 +41,9 @@ public class ClassificationServiceImpl implements ClassificationService {
 
 	@Override
 	@Transactional
-	public Category getOne(int id,Boolean parentID) {
+	public Category getOne(int id) {
 		// TODO Auto-generated method stub
-		return classificationDAO.getOne(id,parentID);
+		return classificationDAO.getOne(id);
 	}
 
 	@Override
