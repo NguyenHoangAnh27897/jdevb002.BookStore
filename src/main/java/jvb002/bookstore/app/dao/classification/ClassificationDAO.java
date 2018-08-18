@@ -12,5 +12,4 @@ public interface ClassificationDAO {
 	public void delete(int id);
 	public Category getOne(int id, Boolean parentID);
 	public List<Category> getAll();
-	
 }
