@@ -31,9 +31,9 @@ public class ClassificationDAOImpl extends HibernateDaoSupport implements Classi
 
 	
 	@Override
-	public Category getOne(int id,Boolean parentID) {
+	public Category getOne(int id) {
 		// TODO Auto-generated method stub
-		String sqlQuery = (!parentID) ? "from Category where categoryID=:id" : "from Category where Category_ParentID=:id";
+		String sqlQuery = "from Category where categoryID=:id";
 		Category cate  = (Category)getHibernateTemplate().find(sqlQuery,new Integer(id));
 		return cate !=null ? cate : null;
 	

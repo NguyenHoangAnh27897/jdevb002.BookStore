@@ -10,6 +10,6 @@ public interface ClassificationDAO {
 	public void save(Category c);
 	public void update(Category c);
 	public void delete(int id);
-	public Category getOne(int id, Boolean parentID);
+	public Category getOne(int id);
 	public List<Category> getAll();
 }

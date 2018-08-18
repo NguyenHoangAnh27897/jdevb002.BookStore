@@ -55,8 +55,8 @@ public class classificationController {
 	}
 	
 	@RequestMapping("/edit/{id:\\d+}")
-	public String edit(@PathVariable int id,Boolean parentID,Model model) {
-		model.addAttribute("category", this.classificationService.getOne(id,parentID));
+	public String edit(@PathVariable int id,Model model) {
+		model.addAttribute("category", this.classificationService.getOne(id));
         model.addAttribute("listCategorys", this.classificationService.getAll());
         return "category";
 	}
