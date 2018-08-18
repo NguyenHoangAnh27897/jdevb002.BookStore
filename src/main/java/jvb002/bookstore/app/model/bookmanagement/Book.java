@@ -1,11 +1,15 @@
 package jvb002.bookstore.app.model.bookmanagement;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import jvb002.bookstore.app.model.publishermanagement.Publisher;
 
 @Entity
 @Table(name="book")
@@ -42,7 +46,7 @@ public class Book {
 	private String type;
 	
 	@Column(name = "PublishID")
-	private int publishID;
+	private Set<Publisher> publishID;
 	
 	@Column(name = "Created_Date")
 	private String createdDate;
@@ -130,11 +134,11 @@ public class Book {
 		this.type = type;
 	}
 
-	public int getPublishID() {
+	public Set<Publisher> getPublishID() {
 		return publishID;
 	}
 
-	public void setPublishID(int publishID) {
+	public void setPublishID(Set<Publisher> publishID) {
 		this.publishID = publishID;
 	}
 
