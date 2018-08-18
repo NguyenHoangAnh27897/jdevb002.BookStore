@@ -10,7 +10,7 @@ import jvb002.bookstore.app.model.classification.Category;
 //@Repository
 public class ClassificationDAOImpl extends HibernateDaoSupport implements ClassificationDAO {
 	
-
+	
 	@Override
 	public void save(Category c) {
 		// TODO Auto-generated method stub
