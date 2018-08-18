@@ -46,7 +46,7 @@ public class Book {
 	private String type;
 	
 	@Column(name = "PublishID")
-	private Set<Publisher> publishID;
+	private int publishID;
 	
 	@Column(name = "Created_Date")
 	private String createdDate;
@@ -134,11 +134,11 @@ public class Book {
 		this.type = type;
 	}
 
-	public Set<Publisher> getPublishID() {
+	public int getPublishID() {
 		return publishID;
 	}
 
-	public void setPublishID(Set<Publisher> publishID) {
+	public void setPublishID(int publishID) {
 		this.publishID = publishID;
 	}
 
