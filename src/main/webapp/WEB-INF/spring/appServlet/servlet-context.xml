@@ -30,7 +30,7 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/db_bookstore" />
+			value="jdbc:mysql://localhost:3306/bookstore" />
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="" />
 	</beans:bean>
@@ -57,17 +57,24 @@
 		</beans:property>
 	</beans:bean>
 	
-	<beans:bean id = "hibernateTemplate" class = "org.springframework.orm.hibernate4.HibernateTemplate">
-		<beans:property name = "sessionFactory" ref ="sessionFactory"/>
+	<beans:bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<beans:property name="sessionFactory" ref="sessionFactory"/>
 	</beans:bean>
 	<!-- User Login  -->
 	
 	<!-- Book management -->
 	 
 	<!-- User management  -->
-	
 	<!-- Category management -->
-	
+			<!-- CategoryDAO -->
+	<beans:bean id="classificationDAO" class="jvb002.bookstore.app.dao.classification.ClassificationDAOImpl">
+		<beans:property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</beans:bean>
+		<!-- Category Service -->
+	<beans:bean id="classificationService" class="jvb002.bookstore.app.service.classification.ClassificationServiceImpl">
+		<beans:property name="classificationDAO" ref="classificationDAO" />
+	</beans:bean>
+
 	<!-- Publisher management -->
 
 	<context:component-scan base-package="jvb002.bookstore.app" />
