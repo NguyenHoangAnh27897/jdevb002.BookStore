@@ -11,4 +11,5 @@ public interface ClassificationService {
 	public void delete(int id);
 	public Category getOne(int id,Boolean parentID);
 	public List<Category> getAll();
+	
 }
