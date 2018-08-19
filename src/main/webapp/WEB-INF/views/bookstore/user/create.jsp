@@ -10,23 +10,23 @@
 	<div id="content-body" align="center">
 		<h1><label><b>Register User</b></label></h1>
 		<div id="content">
-			<form id="frmRegister" >
+			<form id="frmRegister" action="user-save" method="POST">
 				<table>
 					<tr>
 						<td><label>Username : </label></td>
-						<td><input type="text" id="userName"/></td>
+						<td><input type="text" id="userName" name="userName"/></td>
 					</tr>
 					<tr>
 						<td><label>Password : </label></td>
-						<td><input type="password" id="userName"/></td>
+						<td><input type="password" id="password" name="password"/></td>
 					</tr>
 					<tr>
 						<td><label>Full Name : </label></td>
-						<td><input type="text" id="fullName"/></td>
+						<td><input type="text" id="fullName" name="fullName"/></td>
 					</tr>
 					<tr>
 						<td><button type="submit" id="save">Save</button></td>
-						<td><button type="reset" id="reset">Rest Form</button></td>
+						<td><button type="reset" id="reset">Reset Form</button></td>
 					</tr>
 				</table>
 			</form>

@@ -94,6 +94,7 @@ public class ConvertUtils {
 	 */
 	public static Category convertCategoryVOToCategory(CategoryVO categoryVO) {
 		Category category = new Category();
+		category.setName(categoryVO.getName());
 		category.setDescription(categoryVO.getDescription());
 		category.setCategory_parentID(categoryVO.getCategory_parentID());
 		category.setCreated_date(categoryVO.getCreated_date());
@@ -111,6 +112,7 @@ public class ConvertUtils {
 	 */
 	public static CategoryVO convertCategoryToCategoryVO(Category category) {
 		CategoryVO categoryVO = new CategoryVO();
+		categoryVO.setName(category.getName());
 		categoryVO.setDescription(category.getDescription());
 		categoryVO.setCategory_parentID(category.getCategory_parentID());
 		categoryVO.setCreated_date(category.getCreated_date());

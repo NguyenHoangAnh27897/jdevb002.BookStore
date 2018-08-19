@@ -34,9 +34,9 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<Book> getDetail() {
+	public Book getDetail(int id) {
 		// TODO Auto-generated method stub
-		return bookDAO.getDetail();
+		return bookDAO.getDetail(id);
 	}
 
 	@Override

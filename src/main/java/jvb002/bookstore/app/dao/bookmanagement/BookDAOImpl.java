@@ -6,7 +6,7 @@ package jvb002.bookstore.app.dao.bookmanagement;
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import jvb002.bookstore.app.model.bookmanagement.Book;
 import jvb002.bookstore.app.model.classification.Category;
@@ -70,10 +70,11 @@ public class BookDAOImpl extends HibernateDaoSupport implements BookDAO {
 	}
 
 	@Override
-	public List<Book> getDetail() {
+	public Book getDetail(int id) {
 		// TODO Auto-generated method stub
-		DetachedCriteria criteria = DetachedCriteria.forClass(Publisher.class);
-		return (List<Book>) getHibernateTemplate().findByCriteria(criteria);
+		String sqlQuery =  "from Book where categoryID=:id";
+		Book cate  = (Book)getHibernateTemplate().find(sqlQuery,new Integer(id));
+		return cate !=null ? cate : null;
 	}
 
 }

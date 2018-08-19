@@ -9,8 +9,8 @@ public interface BookDAO {
 	public void create(Book book);
 	public void update(Book book);
 	public void delete(Book book);
-	public List<Book> getDetail();
 	public List<Category> getCategory();
 	public List<Publisher> getPublisher();
 	public List<Book> getBook();
+	public Book getDetail(int id);
 }

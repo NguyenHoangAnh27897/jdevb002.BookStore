@@ -5,7 +5,9 @@ import java.util.Date;
 public class CategoryVO {
 
 	private int categoryID;
-
+	
+	private String name;
+	
 	private String description;
 
 	private int category_parentID;
@@ -17,6 +19,17 @@ public class CategoryVO {
 	public int getCategoryID() {
 		return categoryID;
 	}
+
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 
 	public void setCategoryID(int categoryID) {
 		this.categoryID = categoryID;

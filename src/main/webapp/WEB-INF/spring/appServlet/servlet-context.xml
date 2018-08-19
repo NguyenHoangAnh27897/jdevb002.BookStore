@@ -63,7 +63,15 @@
 	<!-- User Login  -->
 	
 	<!-- Book management -->
-	 
+	 	 		<!-- BookDAO -->
+	<beans:bean id="bookDAO" class="jvb002.bookstore.app.dao.bookmanagement.BookDAOImpl">
+		<beans:property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</beans:bean>
+		<!-- BookService -->
+	<beans:bean id="bookService" class="jvb002.bookstore.app.service.bookmanagement.BookServiceImpl">
+		<beans:property name="bookDAO" ref="bookDAO" />
+	</beans:bean>
+	
 	<!-- User management  -->
 	<!-- Category management -->
 			<!-- CategoryDAO -->
