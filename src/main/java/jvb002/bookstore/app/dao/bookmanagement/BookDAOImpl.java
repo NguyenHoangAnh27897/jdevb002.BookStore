@@ -6,7 +6,7 @@ package jvb002.bookstore.app.dao.bookmanagement;
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import jvb002.bookstore.app.model.bookmanagement.Book;
 import jvb002.bookstore.app.model.classification.Category;
