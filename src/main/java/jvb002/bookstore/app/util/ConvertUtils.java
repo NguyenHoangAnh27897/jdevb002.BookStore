@@ -50,8 +50,8 @@ public class ConvertUtils {
 		user.setPassword(userVO.getPassword());
 		user.setRole(userVO.getRole());
 		user.setFullName(userVO.getFullName());
-		user.setCreatedUserId(userVO.getCreatedUserId());
-		user.setCreatedDate(userVO.getCreatedDate());
+		user.setCreatedUserId(1);
+		user.setCreatedDate("2018-08-08 00:00:00");
 		return user;
 	}
 

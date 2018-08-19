@@ -1,9 +1,9 @@
 package jvb002.bookstore.app.service.usermanagement;
 
-import jvb002.bookstore.app.model.usermanagement.User;
+import jvb002.bookstore.app.dto.UserVO;
 
 public interface UserService {
 
-	public void insertUser(User user);
+	public void insertUser(UserVO userVO);
 	
 }
