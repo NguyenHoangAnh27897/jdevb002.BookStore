@@ -1,5 +1,7 @@
 package jvb002.bookstore.app.dto;
 
+import java.util.Date;
+
 public class UserVO {
 
 	private int id;

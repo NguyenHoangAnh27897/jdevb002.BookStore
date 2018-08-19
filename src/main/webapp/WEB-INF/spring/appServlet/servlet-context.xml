@@ -32,7 +32,7 @@
 		<beans:property name="url"
 			value="jdbc:mysql://localhost:3306/bookstore" />
 		<beans:property name="username" value="root" />
-		<beans:property name="password" value="" />
+		<beans:property name="password" value="123456" />
 	</beans:bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
@@ -76,6 +76,9 @@
 	<beans:bean id="userDAO" class="jvb002.bookstore.app.dao.usermanagement.UserDAOImpl">
 		<beans:property name="hibernateTemplate" ref="hibernateTemplate"/>
 	</beans:bean>
+	<beans:bean id="userService" class="jvb002.bookstore.app.service.usermanagement.UserServiceImpl">
+        <beans:property name="userDAO" ref="userDAO"></beans:property>
+    </beans:bean>
 	<!-- Category management -->
 			<!-- CategoryDAO -->
 	<beans:bean id="classificationDAO" class="jvb002.bookstore.app.dao.classification.ClassificationDAOImpl">
