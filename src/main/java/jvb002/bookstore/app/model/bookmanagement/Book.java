@@ -1,5 +1,6 @@
 package jvb002.bookstore.app.model.bookmanagement;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -49,7 +50,7 @@ public class Book {
 	private int publishID;
 	
 	@Column(name = "Created_Date")
-	private String createdDate;
+	private Date createdDate;
 	
 	@Column(name = "Created_UserID")
 	private int createUserID;
@@ -142,11 +143,11 @@ public class Book {
 		this.publishID = publishID;
 	}
 
-	public String getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 

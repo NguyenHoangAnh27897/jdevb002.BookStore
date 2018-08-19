@@ -30,7 +30,7 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/bookstore" />
+			value="jdbc:mysql://localhost:3306/bookstore?zeroDateTimeBehavior=convertToNull" />
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="" />
 	</beans:bean>
@@ -63,8 +63,22 @@
 	<!-- User Login  -->
 	
 	<!-- Book management -->
-	 
+	 	 		<!-- BookDAO -->
+	<beans:bean id="bookDAO" class="jvb002.bookstore.app.dao.bookmanagement.BookDAOImpl">
+		<beans:property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</beans:bean>
+		<!-- BookService -->
+	<beans:bean id="bookService" class="jvb002.bookstore.app.service.bookmanagement.BookServiceImpl">
+		<beans:property name="bookDAO" ref="bookDAO" />
+	</beans:bean>
+	
 	<!-- User management  -->
+	<beans:bean id="userDAO" class="jvb002.bookstore.app.dao.usermanagement.UserDAOImpl">
+		<beans:property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</beans:bean>
+	<beans:bean id="userService" class="jvb002.bookstore.app.service.usermanagement.UserServiceImpl">
+        <beans:property name="userDAO" ref="userDAO"></beans:property>
+    </beans:bean>
 	<!-- Category management -->
 			<!-- CategoryDAO -->
 	<beans:bean id="classificationDAO" class="jvb002.bookstore.app.dao.classification.ClassificationDAOImpl">

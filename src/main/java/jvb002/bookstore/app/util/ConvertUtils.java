@@ -50,8 +50,8 @@ public class ConvertUtils {
 		user.setPassword(userVO.getPassword());
 		user.setRole(userVO.getRole());
 		user.setFullName(userVO.getFullName());
-		user.setCreatedUserId(userVO.getCreatedUserId());
-		user.setCreatedDate(userVO.getCreatedDate());
+		user.setCreatedUserId(1);
+		user.setCreatedDate("2018-08-08 00:00:00");
 		return user;
 	}
 
@@ -94,6 +94,7 @@ public class ConvertUtils {
 	 */
 	public static Category convertCategoryVOToCategory(CategoryVO categoryVO) {
 		Category category = new Category();
+		category.setName(categoryVO.getName());
 		category.setDescription(categoryVO.getDescription());
 		category.setCategory_parentID(categoryVO.getCategory_parentID());
 		category.setCreated_date(categoryVO.getCreated_date());
@@ -111,6 +112,7 @@ public class ConvertUtils {
 	 */
 	public static CategoryVO convertCategoryToCategoryVO(Category category) {
 		CategoryVO categoryVO = new CategoryVO();
+		categoryVO.setName(category.getName());
 		categoryVO.setDescription(category.getDescription());
 		categoryVO.setCategory_parentID(category.getCategory_parentID());
 		categoryVO.setCreated_date(category.getCreated_date());

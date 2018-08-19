@@ -1,22 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${create}</title>
-<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/vendor/fontawesome/css/fontawesome.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/css/common.css" />" rel="stylesheet">
+<%@include file="../../shared/templatehead.jsp"%>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
+<style type="text/css">
+    .multiselect-container {
+        width: 100% !important;
+    }
+</style>
 </head>
 <body>
 	<div class="container">
       <h1 class="text-center">${create}</h1>
       <br>
-      <form class="form-horizontal" action="" method="post">
+      <form class="form-horizontal" action="/bookstore/book/create" method="post">
         <!-- Nhập thông tin -->
         <div class="form-group">
           <label class="control-label col-sm-2" for="img">Image:</label>
@@ -96,9 +90,7 @@
         </div>
       </form>
     </div>
-<script src="<c:url value="/resources/vendor/jquery/jquery-3.3.1.min.js" />"></script>
-<script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.min.js" />"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -107,10 +99,4 @@
         });
     });
 </script>
-<style type="text/css">
-    .multiselect-container {
-        width: 100% !important;
-    }
-</style>
-</body>
-</html>
+<%@include file="../../shared/templatefooter.jsp"%>
