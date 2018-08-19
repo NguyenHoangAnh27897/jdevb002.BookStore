@@ -10,21 +10,21 @@ public class PublisherServiceImpl implements PublisherService {
 
 	private PublisherDAO publisherDAO;
 
-	@Override
-	public List<Publisher> getList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<Publisher> getList() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public List<Publisher> getDetail() {
 		// TODO Auto-generated method stub
-		return null;
+		return publisherDAO.getDetail();
 	}
 
 	@Override
-	public void delete(Publisher publisher) {
-		// TODO Auto-generated method stub
+	public void delete(long publishID) {
+		publisherDAO.delete(publishID);
 
 	}
 
@@ -40,5 +40,11 @@ public class PublisherServiceImpl implements PublisherService {
 
 	public void setPublisherDAO(PublisherDAO publisherDAO) {
 		this.publisherDAO = publisherDAO;
+	}
+
+	@Override
+	public Publisher getPublisherByID(long publishID) {
+		// TODO Auto-generated method stub
+		return publisherDAO.getPublisherByID(publishID);
 	}
 }
