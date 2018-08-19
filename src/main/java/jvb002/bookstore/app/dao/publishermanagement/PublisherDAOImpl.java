@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.DetachedCriteria;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.model.publishermanagement.Publisher;
@@ -35,7 +35,6 @@ public class PublisherDAOImpl extends HibernateDaoSupport implements PublisherDA
 
 	@Override
 	public void create(PublisherVO publisherVO) {
-		Publisher publisher = ConvertUtils.convertPublisherVOToPublisher(publisherVO);
 		Session session = getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
@@ -55,6 +54,7 @@ public class PublisherDAOImpl extends HibernateDaoSupport implements PublisherDA
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
+			session.save(ConvertUtils.convertPublisherVOToPublisher(publisherVO));
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();
