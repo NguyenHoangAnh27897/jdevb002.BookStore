@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <spring:url var="css" value="/resources/css" />
 <spring:url var="fonts" value="/resources/fonts" />
 <spring:url var="js" value="/resources/js" />
 <spring:url var="images" value="/resources/images" />
 <spring:url var="img" value="/resources/img" />
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">
