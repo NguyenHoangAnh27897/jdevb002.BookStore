@@ -10,19 +10,22 @@
 	<div id="content-body" align="center">
 		<h1><label><b>Register User</b></label></h1>
 		<div id="content">
-			<form id="frmRegister" action="user-save" method="POST">
+			<form id="frmRegister" action="/user/user-save" method="POST" commandName="userVO">
 				<table>
 					<tr>
+						<td><input type="hidden" id="id" name="id" path="id" disabled="true" /></td>
+					</tr>
+					<tr>
 						<td><label>Username : </label></td>
-						<td><input type="text" id="userName" name="userName"/></td>
+						<td><input type="text" id="userName" name="userName" path="userName" /></td>
 					</tr>
 					<tr>
 						<td><label>Password : </label></td>
-						<td><input type="password" id="password" name="password"/></td>
+						<td><input type="password" id="password" name="password" path="password"/></td>
 					</tr>
 					<tr>
 						<td><label>Full Name : </label></td>
-						<td><input type="text" id="fullName" name="fullName"/></td>
+						<td><input type="text" id="fullName" name="fullName" path="fullName"/></td>
 					</tr>
 					<tr>
 						<td><button type="submit" id="save">Save</button></td>
