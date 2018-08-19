@@ -53,4 +53,10 @@ public class bookmanagementController {
 		this.bookService.delete(book);
 		return "redirect:/";	
 	}
+	
+	@RequestMapping(value = "/book/listbook", method = RequestMethod.GET)
+	public String list() {
+//		this.bookService.getBook();
+		return "bookstore/bookmanagement/listbook";	
+	}
 }

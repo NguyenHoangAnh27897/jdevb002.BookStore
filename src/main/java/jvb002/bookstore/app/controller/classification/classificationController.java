@@ -32,9 +32,15 @@ public class classificationController {
 		return "/categorymanagement/category";
 	}
 	
+	@RequestMapping(value = "/categorymanagement/category_create", method = RequestMethod.GET)
+	public String save(Model model) {
+		model.addAttribute("category", new Category());
+		
+		return "/bookstore/categorymanagement/category_create";
+	}
 	
 	// For add and update person both
-	@RequestMapping(value = "/category/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/categorymanagement/category_create", method = RequestMethod.POST)
 	public String save(@ModelAttribute("category") Category c) {
 
 		if (c.getCategoryID() == 0) {
