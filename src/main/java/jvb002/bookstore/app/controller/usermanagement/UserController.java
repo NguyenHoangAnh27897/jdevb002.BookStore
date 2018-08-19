@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import jvb002.bookstore.app.model.usermanagement.User;
+import jvb002.bookstore.app.dto.UserVO;
 import jvb002.bookstore.app.service.usermanagement.UserService;
 
 /**
@@ -51,15 +51,15 @@ public class UserController {
 		String password = request.getParameter("password");
 		String fullName = request.getParameter("fullName");
 		
-		User user = new User();
-		user.setUserName(userName);
-		user.setFullName(fullName);
-		user.setPassword(password);
-		user.setRole(1);
-		user.setCreatedUserId(1);
-		user.setCreatedDate("2018-08-08 00:00:00");
+		UserVO userVO = new UserVO();
+		userVO.setUserName(userName);
+		userVO.setFullName(fullName);
+		userVO.setPassword(password);
+		userVO.setRole(1);
+		userVO.setCreatedUserId(1);
+		userVO.setCreatedDate("2018-08-08 00:00:00");
 		
-		userService.insertUser(user);
+		userService.insertUser(userVO);
 		
 		return "redirect:/";
 	}

@@ -16,7 +16,6 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 		try {
 			ts = session.beginTransaction();
 			session.save(user);
-			session.persist(user);
 	
 		} catch (Exception e) {
 			ts.rollback();
