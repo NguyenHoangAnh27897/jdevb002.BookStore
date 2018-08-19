@@ -19,8 +19,8 @@ public class classificationController {
 
 	private ClassificationService classificationService;
 
-//	@Autowired(required = true)
-//	@Qualifier(value="classificationService")
+	@Autowired(required = true)
+	@Qualifier(value="classificationService")
 	public void setCategoryService(ClassificationService c){
 		this.classificationService = c;
 	}
