@@ -1,4 +1,4 @@
-	<!-- FOOTER -->
+<!-- FOOTER -->
 	<footer id="footer" class="section section-grey">
 		<!-- container -->
 		<div class="container">
@@ -14,10 +14,8 @@
 		          </a>
 						</div>
 						<!-- /footer logo -->
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
-						<!-- footer social -->
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+ 						<!-- footer social -->
 						<ul class="footer-social">
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -29,8 +27,7 @@
 					</div>
 				</div>
 				<!-- /footer widget -->
-
-				<!-- footer widget -->
+ 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">My Account</h3>
@@ -44,10 +41,8 @@
 					</div>
 				</div>
 				<!-- /footer widget -->
-
-				<div class="clearfix visible-sm visible-xs"></div>
-
-				<!-- footer widget -->
+ 				<div class="clearfix visible-sm visible-xs"></div>
+ 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">Customer Service</h3>
@@ -60,8 +55,7 @@
 					</div>
 				</div>
 				<!-- /footer widget -->
-
-				<!-- footer subscribe -->
+ 				<!-- footer subscribe -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">Stay Connected</h3>
@@ -95,8 +89,7 @@
 		<!-- /container -->
 	</footer>
 	<!-- /FOOTER -->
-
-	<!-- jQuery Plugins -->
+ 	<!-- jQuery Plugins -->
 	
 	<script src="${js}/angular.js"></script>
 	<script src="${js}/bootstrap.min.js"></script>
@@ -106,5 +99,4 @@
 	<script src="${js}/main.js"></script>
 	<script src="${js}/common.js"></script>
 </body>
-
-</html>
+ </html> 

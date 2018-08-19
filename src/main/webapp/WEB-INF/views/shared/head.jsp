@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
@@ -14,40 +13,28 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-	<title>ACADEMY-SHOP</title>
-
-	<!-- Google font -->
+ 	<title>ACADEMY-SHOP</title>
+ 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
-
-	<!-- Bootstrap -->
+ 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="${css}/bootstrap.min.css" />
-
-	<!-- Slick -->
+ 	<!-- Slick -->
 	<link type="text/css" rel="stylesheet" href="${css}/slick.css" />
 	<link type="text/css" rel="stylesheet" href="${css}/slick-theme.css" />
-
-	<!-- nouislider -->
+ 	<!-- nouislider -->
 	<link type="text/css" rel="stylesheet" href="${css}/nouislider.min.css" />
-
-	<!-- Font Awesome Icon -->
+ 	<!-- Font Awesome Icon -->
 	<link type="text/css" rel="stylesheet" href="${css}/font-awesome.min.css">
-
-	<!-- Custom stlylesheet -->
+ 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="${css}/style.css" />
 	<!-- common Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="${css}/common.css" />
-	
-	<!-- Jquery -->
-	<script src="${js}/jquery.min.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
-</head>
-
-<body>
-	<div class="se-pre-con"></div>
+ </head>
+ <body>
+	<div class="se-pre-con"></div> 
