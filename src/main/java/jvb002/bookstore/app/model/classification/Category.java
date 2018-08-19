@@ -24,26 +24,25 @@ public class Category {
 	@Column(name = "categoryID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int categoryID;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "category_parentID")
 	private int category_parentID;
-	
+
 	@Column(name = "created_userID")
 	private int created_userID;
-	
+
 	@Column(name = "created_date")
 	private Date created_date;
-	
+
 	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "book_category",
-			   joinColumns = { @JoinColumn(name = "bookID") }, 
-			   inverseJoinColumns = {@JoinColumn(name = "categoryID") })
+	@JoinTable(name = "book_category", joinColumns = { @JoinColumn(name = "bookID") }, inverseJoinColumns = {
+			@JoinColumn(name = "categoryID") })
 	private Set<Book> book = new HashSet<Book>();
 
 	public Set<Book> getBook() {
@@ -54,7 +53,6 @@ public class Category {
 		this.book = book;
 	}
 
-	
 	public String getName() {
 		return name;
 	}
@@ -105,8 +103,9 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [categoryID=" + categoryID + ", description=" + description + ", category_parentID="
-				+ category_parentID + ", created_userID=" + created_userID + ", created_date=" + created_date + "]";
+		return "Category [categoryID=" + categoryID + ", name=" + name + ", description=" + description
+				+ ", category_parentID=" + category_parentID + ", created_userID=" + created_userID + ", created_date="
+				+ created_date + ", book=" + book + "]";
 	}
 
 }
