@@ -73,6 +73,9 @@
 	</beans:bean>
 	
 	<!-- User management  -->
+	<beans:bean id="userDAO" class="jvb002.bookstore.app.dao.usermanagement.UserDAOImpl">
+		<beans:property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</beans:bean>
 	<!-- Category management -->
 			<!-- CategoryDAO -->
 	<beans:bean id="classificationDAO" class="jvb002.bookstore.app.dao.classification.ClassificationDAOImpl">
