@@ -29,7 +29,7 @@ public class classificationController {
 	public String listCategory(Model model) {
 		model.addAttribute("category", new Category());
 		model.addAttribute("listCategories", this.classificationService.getAll());
-		return "category";
+		return "/categorymanagement/category";
 	}
 	
 	
@@ -64,7 +64,7 @@ public class classificationController {
 	public String edit(@PathVariable int id,Model model) {
 		model.addAttribute("category", this.classificationService.getOne(id));
         model.addAttribute("listCategories", this.classificationService.getAll());
-        return "category";
+        return "categorymanagement/category";
 	}
 	
 }
