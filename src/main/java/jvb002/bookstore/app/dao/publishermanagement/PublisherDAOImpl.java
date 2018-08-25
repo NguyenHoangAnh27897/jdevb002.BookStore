@@ -46,12 +46,13 @@ public class PublisherDAOImpl implements PublisherDAO {
 	}
 
 	@Override
-	public void create(PublisherVO publisherVO) {
-		Publisher publisher = ConvertUtils.convertPublisherVOToPublisher(publisherVO);
+	public void create(Publisher publisher) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
+			session.save(publisher);
+			session.flush();
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();
@@ -61,19 +62,26 @@ public class PublisherDAOImpl implements PublisherDAO {
 	}
 
 	@Override
-	public void update(PublisherVO publisherVO) {
-		Publisher publisher = ConvertUtils.convertPublisherVOToPublisher(publisherVO);
+	public void update(Publisher publisher) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			session.save(ConvertUtils.convertPublisherVOToPublisher(publisherVO));
+			session.update(publisher);
+			session.flush();
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();
 		} finally {
 			session.close();
 		}
+	}
+
+	@Override
+	public PublisherVO getPublisher(int id) {
+		Session session = sessionFactory.openSession();
+		Publisher p = (Publisher) session.load(Publisher.class, new Long(id));
+		return ConvertUtils.convertPublisherToPublisherVO(p);
 	}
 	@Override
 	public Publisher getPublisherByID(long publishID) {

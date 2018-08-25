@@ -9,6 +9,7 @@ public interface PublisherDAO {
 	public Publisher getPublisherByID(long publishID);
 	public List<Publisher> getDetail();
 	public void delete(long publishID);
-	public void create(PublisherVO publisherVO);
-	public void update(PublisherVO publisherVO);
+	public void create(Publisher publisher);
+	public void update(Publisher publisher);
+	public PublisherVO getPublisher(int id);
 }

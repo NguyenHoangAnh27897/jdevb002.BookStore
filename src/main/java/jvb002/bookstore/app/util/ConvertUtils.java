@@ -68,6 +68,7 @@ public class ConvertUtils {
 	
 	public static  Publisher convertPublisherVOToPublisher(PublisherVO publisherVO) {
 		Publisher publisher = new Publisher();
+		publisherVO.setPublishID(publisher.getPublishID());
 		publisher.setName(publisherVO.getName());
 		publisher.setDescription(publisherVO.getDescription());
 		publisher.setCreatedDate(publisherVO.getCreatedDate());

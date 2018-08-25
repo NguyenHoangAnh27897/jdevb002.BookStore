@@ -12,4 +12,5 @@ public interface PublisherService {
 	public void delete(long publishID);
 	public void create(PublisherVO publisherVO);
 	public void update(PublisherVO publisherVO);
+	public PublisherVO getPublisher(int id);
 }
