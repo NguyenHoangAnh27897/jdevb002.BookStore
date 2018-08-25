@@ -73,8 +73,8 @@ public class BookDAOImpl extends HibernateDaoSupport implements BookDAO {
 	public Book getDetail(int id) {
 		// TODO Auto-generated method stub
 		String sqlQuery =  "from Book where BookID=:id";
-		Book cate  = (Book)getHibernateTemplate().find(sqlQuery,new Integer(id));
-		return cate !=null ? cate : null;
+		Book book  = (Book)getHibernateTemplate().findByNamedParam(sqlQuery,"id",id).get(0);
+		return book !=null ? book : null;
 	}
 
 }
