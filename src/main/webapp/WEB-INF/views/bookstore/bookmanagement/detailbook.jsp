@@ -62,8 +62,7 @@
 						<div class="product-tab">
 							<ul class="tab-nav">
 								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab1">Details</a></li>
-								<li><a data-toggle="tab" href="#tab2">Reviews (${book.view })</a></li>
+								<li><a data-toggle="tab" href="#tab1">Reviews (${book.view })</a></li>
 							</ul>
 							<div class="tab-content">
 								<div id="tab1" class="tab-pane fade in active">
@@ -135,34 +134,6 @@
 													<li><a href="#"><i class="fa fa-caret-right"></i></a></li>
 												</ul>
 											</div>
-										</div>
-										<div class="col-md-6">
-											<h4 class="text-uppercase">Write Your Review</h4>
-											<p>Your email address will not be published.</p>
-											<form class="review-form">
-												<div class="form-group">
-													<input class="input" type="text" placeholder="Your Name" />
-												</div>
-												<div class="form-group">
-													<input class="input" type="email" placeholder="Email Address" />
-												</div>
-												<div class="form-group">
-													<textarea class="input" placeholder="Your review"></textarea>
-												</div>
-												<div class="form-group">
-													<div class="input-rating">
-														<strong class="text-uppercase">Your Rating: </strong>
-														<div class="stars">
-															<input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-															<input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-															<input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-															<input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-															<input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-														</div>
-													</div>
-												</div>
-												<button class="primary-btn">Submit</button>
-											</form>
 										</div>
 									</div>
 
