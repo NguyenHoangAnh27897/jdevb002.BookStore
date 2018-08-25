@@ -34,7 +34,7 @@ public class PublishermanagementController {
 
 	@RequestMapping(value = "/publisher/create", method = RequestMethod.GET)
 	public String createView(Locale locale, Model model) {
-		//logger.info("Welcome home! The client locale is {}.", locale);
+		// logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("publisher", new PublisherVO());
 		return "/bookstore/publisher/Create";
 	}
