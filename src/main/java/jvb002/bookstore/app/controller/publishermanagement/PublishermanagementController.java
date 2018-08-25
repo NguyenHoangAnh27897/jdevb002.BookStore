@@ -33,7 +33,7 @@ public class PublishermanagementController {
 
 	@RequestMapping(value = "/publisher/create", method = RequestMethod.GET)
 	public String createView(Locale locale, Model model) {
-		//logger.info("Welcome home! The client locale is {}.", locale);
+		// logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("publisher", new PublisherVO());
 		return "/bookstore/publisher/Create";
 	}
@@ -49,38 +49,43 @@ public class PublishermanagementController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		return "Update";
 	}
+
 	/**
-	GET LIST
- */
-@RequestMapping(value = "/publisher/list", method = RequestMethod.GET)
-public String list(Locale locale, Model model) {
-	logger.info("Welcome home! The client locale is {}.", locale);
-	model.addAttribute("publisher", new Publisher());
-	model.addAttribute("listPublishers", this.publisherService.getDetail());
+	 * GET LIST
+	 */
+	@RequestMapping(value = "/publisher/list", method = RequestMethod.GET)
+	public String list(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		model.addAttribute("publisher", new Publisher());
+		model.addAttribute("listPublishers", this.publisherService.getDetail());
 
-	return "/bookstore/publisher/publisher_list";
-}
+		return "/bookstore/publisher/publisher_list";
+	}
 
-/**
-	GET DETAIL
- */
-@RequestMapping(value = "/publisher/detail/{id}", method = RequestMethod.GET)
-public String detail(@PathVariable("publishID") long publishID, Model model) {
-	//logger.info("Welcome home! The client locale is {}.", locale);
-	model.addAttribute("publisher", this.publisherService.getPublisherByID(publishID));
-	//model.addAttribute("listPublishers", this.publisherService.getDetail());
+	/**
+	 * GET DETAIL
+	 */
+	@RequestMapping(value = "/publisher/detail/{id}", method = RequestMethod.GET)
+	public String detail(@PathVariable("publishID") long publishID, Model model) {
+		// logger.info("Welcome home! The client locale is {}.", locale);
+		model.addAttribute("publisher", this.publisherService.getPublisherByID(publishID));
+		// model.addAttribute("listPublishers",
+		// this.publisherService.getDetail());
 
-	return "/bookstore/publisher/publisher_detail";
-}
-/**
-	DELETE FUNCTION
- */
-@RequestMapping(value = "/publisher/delete/{id}", method = RequestMethod.DELETE)
-public String delete(@PathVariable("publishID") long publishID, Model model) {
-	//logger.info("Welcome home! The client locale is {}.", locale);
-	this.publisherService.delete(publishID);;
-	//model.addAttribute("listPublishers", this.publisherService.getDetail());
+		return "/bookstore/publisher/publisher_detail";
+	}
 
-	return "/bookstore/publisher/publisher_delete";
-}
+	/**
+	 * DELETE FUNCTION
+	 */
+	@RequestMapping(value = "/publisher/delete/{id}", method = RequestMethod.DELETE)
+	public String delete(@PathVariable("publishID") long publishID, Model model) {
+		// logger.info("Welcome home! The client locale is {}.", locale);
+		this.publisherService.delete(publishID);
+		;
+		// model.addAttribute("listPublishers",
+		// this.publisherService.getDetail());
+
+		return "/bookstore/publisher/publisher_delete";
+	}
 }
