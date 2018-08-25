@@ -191,7 +191,7 @@
 				<!-- section title -->
 				<div class="col-md-12">
 					<div class="section-title">
-						<h2 class="title">Picked For You</h2>
+						<h2 class="title">Related Book</h2>
 					</div>
 				</div>
 				<!-- section title -->
