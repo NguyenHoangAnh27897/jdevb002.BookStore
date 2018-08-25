@@ -11,7 +11,7 @@ public class PublisherVO {
 
 	private int createdUserID;
 
-	private Date createdDate;
+	private String createdDate;
 
 	public long getPublishID() {
 		return publishID;
@@ -45,11 +45,11 @@ public class PublisherVO {
 		this.createdUserID = createdUserID;
 	}
 
-	public Date getCreatedDate() {
+	public String getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
 }
