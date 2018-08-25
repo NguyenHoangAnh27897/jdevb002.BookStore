@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import jvb002.bookstore.app.model.classification.Category;
+import jvb002.bookstore.app.dto.CategoryVO;
 import jvb002.bookstore.app.service.classification.ClassificationService;
 
 
@@ -18,59 +18,60 @@ import jvb002.bookstore.app.service.classification.ClassificationService;
 public class classificationController {
 
 	private ClassificationService classificationService;
-
+	private static String listPath = "bookstore/categorymanagement/list";
+	private static String createPath = "/categorymanagement/create";
 	@Autowired(required = true)
 	@Qualifier(value="classificationService")
 	public void setCategoryService(ClassificationService c){
 		this.classificationService = c;
 	}
 	
-	@RequestMapping(value = "/categories", method = RequestMethod.GET)
+	@RequestMapping(value = "/categorymanagement/list", method = RequestMethod.GET)
 	public String listCategory(Model model) {
-		model.addAttribute("category", new Category());
+		model.addAttribute("categoryVO", new CategoryVO());
 		model.addAttribute("listCategories", this.classificationService.getAll());
-		return "/categorymanagement/category";
+		return listPath;
 	}
 	
-	@RequestMapping(value = "/categorymanagement/category_create", method = RequestMethod.GET)
+	@RequestMapping(value = "/categorymanagement/create", method = RequestMethod.GET)
 	public String save(Model model) {
-		model.addAttribute("category", new Category());
+		model.addAttribute("categoryVO", new CategoryVO());
 		
-		return "/bookstore/categorymanagement/category_create";
+		return createPath;
 	}
 	
 	// For add and update person both
-	@RequestMapping(value = "/categorymanagement/category_create", method = RequestMethod.POST)
-	public String save(@ModelAttribute("category") Category c) {
+	@RequestMapping(value = "/category/create", method = RequestMethod.POST)
+	public String save(@ModelAttribute("cateVO") CategoryVO cateVO) {
 
-		if (c.getCategoryID() == 0) {
+		if (cateVO.getCategoryID() == 0) {
 			// new category, add it
-			this.classificationService.save(c);
+			this.classificationService.save(cateVO);
 		} else {
 			// existing category, call update
-			this.classificationService.update(c);
+			this.classificationService.update(cateVO);
 		}
-		return "redirect:/categories";
+		return "redirect:" +listPath;
 	}
 	@RequestMapping("/category/detail/{id}")
 	public String detail(@PathVariable("id") int id ) {
 		this.classificationService.delete(id);
 		
-		return "redirect:/categories";
+		return "redirect:" +listPath;
 	}
 	
 	@RequestMapping("/category/delete/{id}")
 	public String delete(@PathVariable("id") int id ) {
 		this.classificationService.delete(id);
 		
-		return "redirect:/categories";
+		return "redirect:"+listPath;
 	}
 	
 	@RequestMapping("/category/edit/{id:\\d+}")
 	public String edit(@PathVariable int id,Model model) {
 		model.addAttribute("category", this.classificationService.getOne(id));
         model.addAttribute("listCategories", this.classificationService.getAll());
-        return "categorymanagement/category";
+        return listPath;
 	}
 	
 }

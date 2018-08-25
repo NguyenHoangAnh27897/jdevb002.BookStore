@@ -6,6 +6,9 @@
  */
 package jvb002.bookstore.app.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jvb002.bookstore.app.dto.CategoryVO;
 import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.dto.UserVO;
@@ -94,6 +97,7 @@ public class ConvertUtils {
 	 */
 	public static Category convertCategoryVOToCategory(CategoryVO categoryVO) {
 		Category category = new Category();
+		category.setCategoryID(categoryVO.getCategoryID());
 		category.setName(categoryVO.getName());
 		category.setDescription(categoryVO.getDescription());
 		category.setCategory_parentID(categoryVO.getCategory_parentID());
@@ -112,11 +116,21 @@ public class ConvertUtils {
 	 */
 	public static CategoryVO convertCategoryToCategoryVO(Category category) {
 		CategoryVO categoryVO = new CategoryVO();
+		categoryVO.setCategoryID(category.getCategoryID());
 		categoryVO.setName(category.getName());
 		categoryVO.setDescription(category.getDescription());
 		categoryVO.setCategory_parentID(category.getCategory_parentID());
 		categoryVO.setCreated_date(category.getCreated_date());
 		categoryVO.setCreated_userID(category.getCreated_userID());
 		return categoryVO;
+	}
+	
+	@SuppressWarnings("null")
+	public static List<CategoryVO> ListCategoryVO(List<Category> categories) {
+		List<CategoryVO> listCategoryVO = new  ArrayList<CategoryVO>();
+			for (Category category : categories) {
+				listCategoryVO.add(convertCategoryToCategoryVO(category));
+			}
+		return listCategoryVO.size() >0 ? listCategoryVO : null;
 	}
 }
