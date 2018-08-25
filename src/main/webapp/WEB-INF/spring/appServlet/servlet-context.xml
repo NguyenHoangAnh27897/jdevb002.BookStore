@@ -30,7 +30,7 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/bookstore" />
+			value="jdbc:mysql://localhost:3306/bookstore?zeroDateTimeBehavior=convertToNull" />
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="" />
 	</beans:bean>
@@ -90,6 +90,7 @@
 	</beans:bean>
 
 	<!-- Publisher management -->
+<<<<<<< HEAD
 		<beans:bean id="publisherDAO" class="jvb002.bookstore.app.dao.publishermanagement.PublisherDAOImpl">
 			<beans:property name="hibernateTemplate" ref="hibernateTemplate" ></beans:property>
 		</beans:bean>
@@ -97,6 +98,17 @@
 		<beans:bean id="publisherService" class="jvb002.bookstore.app.service.publishermanagement.PublisherServiceImpl">
 			<beans:property name="publisherDAO" ref="publisherDAO"></beans:property>
 		</beans:bean>
+=======
+
+		<beans:bean id="publisherDAO" class="jvb002.bookstore.app.dao.publishermanagement.PublisherDAOImpl">
+			<beans:property name="hibernateTemplate" ref="hibernateTemplate" ></beans:property>
+		</beans:bean>
+		
+		<beans:bean id="publisherService" class="jvb002.bookstore.app.service.publishermanagement.PublisherServiceImpl">
+			<beans:property name="publisherDAO" ref="publisherDAO"></beans:property>
+		</beans:bean>
+
+>>>>>>> branch 'master' of https://github.com/vndkubi/jdevb002.BookStore.git
 	<context:component-scan base-package="jvb002.bookstore.app" />
 	<context:component-scan base-package="jvb002.bookstore.app.controller.bookmanagement" />
 	<context:component-scan base-package="jvb002.bookstore.app.controller.classification" />
