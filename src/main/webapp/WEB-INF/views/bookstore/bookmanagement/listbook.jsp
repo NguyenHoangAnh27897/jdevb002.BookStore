@@ -20,17 +20,17 @@
 					<div class="product-thumb">
 						<a class="main-btn quick-view" href="/bookstore/book/detailbook/${book.id}"><i
 							class="fa fa-search-plus"></i> View</a> <img
-							src="./img/product01.jpg" alt="">
+							src="./../resources/img/${book.image}" alt="">
 					</div>
 					<div class="product-body">
-						<h3 class="product-price">${book.view}</h3>
+						<h3 class="product-price">${book.title}</h3>
 						<div class="product-rating">
 							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 								class="fa fa-star-o empty"></i>
 						</div>
 						<h2 class="product-name">
-							<a href="#">${book.title}</a>
+							<a href="#">${book.view} View</a>
 						</h2>
 					</div>
 				</div>

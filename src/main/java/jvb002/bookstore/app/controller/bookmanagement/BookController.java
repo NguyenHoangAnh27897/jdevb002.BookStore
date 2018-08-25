@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jvb002.bookstore.app.dto.BookVO;
 import jvb002.bookstore.app.model.bookmanagement.Book;
 import jvb002.bookstore.app.service.bookmanagement.BookService;
 import jvb002.bookstore.app.service.classification.ClassificationService;
 
 @Controller
-public class bookmanagementController {
-	private static final Logger logger = LoggerFactory.getLogger(bookmanagementController.class);
+public class BookController {
+	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	private BookService bookService;
 	private ClassificationService classificationService;
 
@@ -64,14 +65,15 @@ public class bookmanagementController {
 
 	@RequestMapping(value = "/book/listbook", method = RequestMethod.GET)
 	public String list(Model model) {
-		model.addAttribute("book", new Book());
+		model.addAttribute("book", new BookVO());
 		model.addAttribute("listbooks", this.bookService.getBook());
 		return "bookstore/bookmanagement/listbook";
 	}
 
 	@RequestMapping(value = "/book/detailbook/{id:\\d+}", method = RequestMethod.GET)
 	public String detailbook(@PathVariable("id") int id, Model model) {
-		model.addAttribute("detail", "Detail Book");
+		model.addAttribute("detail",  new BookVO());
+		model.addAttribute("listbooks", this.bookService.getBook());
 		model.addAttribute("book", this.bookService.getDetail(id));
 
 		return "bookstore/bookmanagement/detailbook";
