@@ -13,7 +13,7 @@
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+    <div id="list" class="tab-pane fade in active">
       <h3>HOME</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
@@ -36,6 +36,12 @@
 			    <label class="control-label col-sm-2" for="description">Description</label>
 			    <div class="col-sm-10">
 			       <textarea class="form-control" rows="5"  placeholder="Description" ng-model="data.description" id="comment"></textarea>
+			    </div>
+	  		</div>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="create_by">Create by</label>
+			    <div class="col-sm-10">
+			       <textarea class="form-control" rows="5"  placeholder="create_by" ng-model="data.description" id="comment"></textarea>
 			    </div>
 	  		</div>
       </form>
