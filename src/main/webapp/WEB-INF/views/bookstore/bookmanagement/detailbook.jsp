@@ -53,8 +53,8 @@
 									<i class="fa fa-star-o empty"></i>
 								</div>
 							</div>
-							<p><strong>Availability:</strong> In Stock</p>
-							<p><strong>Brand:</strong> E-SHOP</p>
+							<p><strong>Author:</strong> ${book.author }</p>
+							<p><strong>Type:</strong> ${book.type }</p>
 							<p>${book.description }</p>
 						</div>
 					</div>
