@@ -1,6 +1,7 @@
 package jvb002.bookstore.app.dto;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import jvb002.bookstore.app.model.publishermanagement.Publisher;
@@ -26,7 +27,13 @@ public class BookVO {
 	
 	private String image;
 	
-	public Set<Publisher> publish;
+	private int publishID;
+	
+	private String[] categoryId; 
+	
+	public List<CategoryVO> listCategory;
+	
+	public List<PublisherVO> publish;
 	
 	public Date Create_Date;
 	
@@ -104,11 +111,35 @@ public class BookVO {
 		this.image = image;
 	}
 
-	public Set<Publisher> getPublish() {
+	public int getPublishID() {
+		return publishID;
+	}
+
+	public void setPublishID(int publishID) {
+		this.publishID = publishID;
+	}
+
+	public String[] getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String[] categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public List<CategoryVO> getListCategory() {
+		return listCategory;
+	}
+
+	public void setListCategory(List<CategoryVO> listCategory) {
+		this.listCategory = listCategory;
+	}
+
+	public List<PublisherVO> getPublish() {
 		return publish;
 	}
 
-	public void setPublish(Set<Publisher> publish) {
+	public void setPublish(List<PublisherVO> publish) {
 		this.publish = publish;
 	}
 

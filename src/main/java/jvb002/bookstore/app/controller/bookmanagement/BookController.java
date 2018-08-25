@@ -1,5 +1,7 @@
 package jvb002.bookstore.app.controller.bookmanagement;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Qualifier;
@@ -15,26 +17,66 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import jvb002.bookstore.app.dto.BookVO;
+import jvb002.bookstore.app.dto.CategoryVO;
+import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.model.bookmanagement.Book;
+import jvb002.bookstore.app.model.classification.Category;
 import jvb002.bookstore.app.service.bookmanagement.BookService;
 import jvb002.bookstore.app.service.classification.ClassificationService;
+import jvb002.bookstore.app.service.publishermanagement.PublisherService;
 
 @Controller
 public class BookController {
 	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	private BookService bookService;
 	private ClassificationService classificationService;
+	private PublisherService publisherService;
 
 	@Autowired(required = true)
 	public void setPersonService(BookService bookService) {
 		this.bookService = bookService;
 	}
+	
+    @Autowired(required = true)
+    public void setPublisherService(PublisherService publisherService) {
+		this.publisherService = publisherService;
+	}
 
 	@RequestMapping(value = "/book/create", method = RequestMethod.GET)
 	public String create(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-
+		
 		model.addAttribute("create", "Create Book");
+		model.addAttribute("categoryList", this.bookService.getCategory());
+		model.addAttribute("publisher", this.bookService.getPublisher());
+		model.addAttribute("category", new Category());
+		BookVO bookVO = new BookVO();
+		List<PublisherVO> publisherVOs = new ArrayList<PublisherVO>();
+		PublisherVO publisherVO = new PublisherVO();
+
+		
+		
+		publisherVO.setPublishID(1);
+		publisherVO.setName("numberone");
+		publisherVO.setPublishID(2);
+		publisherVO.setName("numbertwo");
+		
+		publisherVOs.add(publisherVO);
+		bookVO.setPublish(publisherVOs);
+		
+		List<CategoryVO> categoryVOs = new ArrayList<CategoryVO>();
+		CategoryVO categoryVO = new CategoryVO();
+		categoryVO.setCategoryID(1);
+		categoryVO.setDescription("Name");
+		categoryVO.setCategoryID(2);
+		categoryVO.setDescription("asd");
+		categoryVOs.add(categoryVO);
+		bookVO.setListCategory(categoryVOs);
+		model.addAttribute("book", bookVO);
+//		model.addAttribute("publish", publisherVOs);
+//		model.addAttribute("category", new Category());
+//		model.addAttribute("publisher", new Publisher());
+		
 		return "bookstore/bookmanagement/create";
 	}
 
