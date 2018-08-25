@@ -38,7 +38,7 @@ public class Category {
 	private int created_userID;
 
 	@Column(name = "created_date")
-	private Date created_date;
+	private String created_date;
 
 	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name = "book_category", joinColumns = { @JoinColumn(name = "bookID") }, inverseJoinColumns = {
@@ -93,11 +93,11 @@ public class Category {
 		this.created_userID = created_userID;
 	}
 
-	public Date getCreated_date() {
+	public String getCreated_date() {
 		return created_date;
 	}
 
-	public void setCreated_date(Date created_date) {
+	public void setCreated_date(String created_date) {
 		this.created_date = created_date;
 	}
 

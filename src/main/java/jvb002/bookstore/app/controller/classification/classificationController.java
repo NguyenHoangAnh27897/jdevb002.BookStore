@@ -19,7 +19,8 @@ public class classificationController {
 
 	private ClassificationService classificationService;
 	private static String listPath = "bookstore/categorymanagement/list";
-	private static String createPath = "/categorymanagement/create";
+	private static String createPath = "bookstore/categorymanagement/create";
+	private static String redirectList = "redirect:/categorymanagement/list";
 	@Autowired(required = true)
 	@Qualifier(value="classificationService")
 	public void setCategoryService(ClassificationService c){
@@ -40,31 +41,32 @@ public class classificationController {
 		return createPath;
 	}
 	
-	// For add and update person both
-	@RequestMapping(value = "/category/create", method = RequestMethod.POST)
-	public String save(@ModelAttribute("cateVO") CategoryVO cateVO) {
-
-		if (cateVO.getCategoryID() == 0) {
+	// For add and update
+	@RequestMapping(value = "/categorymanagement/create", method = RequestMethod.POST)
+	public String saveCategory(@ModelAttribute("categoryVO") CategoryVO categoryVO) {
+		System.out.println(categoryVO.toString());
+		if (categoryVO.getCategoryID() == 0) {
 			// new category, add it
-			this.classificationService.save(cateVO);
+			this.classificationService.save(categoryVO);
 		} else {
 			// existing category, call update
-			this.classificationService.update(cateVO);
+			this.classificationService.update(categoryVO);
 		}
-		return "redirect:" +listPath;
+		return redirectList;
 	}
+	
 	@RequestMapping("/category/detail/{id}")
 	public String detail(@PathVariable("id") int id ) {
 		this.classificationService.delete(id);
 		
-		return "redirect:" +listPath;
+		return redirectList;
 	}
 	
 	@RequestMapping("/category/delete/{id}")
 	public String delete(@PathVariable("id") int id ) {
 		this.classificationService.delete(id);
 		
-		return "redirect:"+listPath;
+		return redirectList;
 	}
 	
 	@RequestMapping("/category/edit/{id:\\d+}")
