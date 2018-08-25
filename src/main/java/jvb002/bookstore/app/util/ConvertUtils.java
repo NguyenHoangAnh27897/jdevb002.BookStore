@@ -6,6 +6,9 @@
  */
 package jvb002.bookstore.app.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jvb002.bookstore.app.dto.CategoryVO;
 import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.dto.UserVO;
@@ -118,5 +121,14 @@ public class ConvertUtils {
 		categoryVO.setCreated_date(category.getCreated_date());
 		categoryVO.setCreated_userID(category.getCreated_userID());
 		return categoryVO;
+	}
+	
+	@SuppressWarnings("null")
+	public static List<CategoryVO> ListCategoryVO(List<Category> categories) {
+		List<CategoryVO> listCategoryVO = new  ArrayList<CategoryVO>();
+			for (Category category : categories) {
+				listCategoryVO.add(convertCategoryToCategoryVO(category));
+			}
+		return listCategoryVO.size() >0 ? listCategoryVO : null;
 	}
 }
