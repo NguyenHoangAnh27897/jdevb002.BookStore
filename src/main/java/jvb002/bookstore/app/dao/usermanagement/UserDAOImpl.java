@@ -1,5 +1,6 @@
 package jvb002.bookstore.app.dao.usermanagement;
 
+import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -13,7 +14,7 @@ import jvb002.bookstore.app.model.usermanagement.User;
 public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);
-	
+
 	@Override
 	public void insertUser(User user) {
 		Session session = getSessionFactory().openSession();
@@ -21,7 +22,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 		try {
 			ts = session.beginTransaction();
 			session.save(user);
-	
+
 		} catch (Exception e) {
 			ts.rollback();
 		} finally {
@@ -33,7 +34,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 
 	@Override
 	public void getUser(int id) {
-	
+
 		Session session = getSessionFactory().openSession();
 		Transaction ts = null;
 		try {
@@ -42,7 +43,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 			User user = new User();
 			q1.setParameter("id", id);
 			logger.info("User: " + user.getUserName());
-	
+
 		} catch (Exception e) {
 			ts.rollback();
 		} finally {
@@ -50,5 +51,42 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 			ts.commit();
 			session.close();
 		}
+	}
+
+	@Override
+	public List<User> userList() {
+		Session session = getSessionFactory().openSession();
+		Transaction ts = null;
+
+		ts = session.beginTransaction();
+		Query q1 = session.createQuery("from User");
+		List<User> userList = q1.list();
+		for (User u : userList) {
+			logger.info("User List::" + u);
+		}
+
+		return userList;
+	}
+
+	@Override
+	public void deleteUser(int id) {
+		Session session = getSessionFactory().openSession();
+		Transaction ts = null;
+
+		try {
+			ts = session.beginTransaction();
+			User user = (User) session.load(User.class, id);
+			if (user != null) {
+				session.delete(user);
+			}
+
+		} catch (Exception e) {
+
+		} finally {
+			session.flush();
+			ts.commit();
+			session.close();
+		}
+
 	}
 }
