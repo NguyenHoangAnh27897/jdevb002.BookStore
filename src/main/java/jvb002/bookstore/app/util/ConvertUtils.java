@@ -46,9 +46,10 @@ public class ConvertUtils {
 	 */
 	public static User convertUserVOToUser(UserVO userVO) {
 		User user = new User();
+		user.setId(userVO.getId());
 		user.setUserName(userVO.getUserName());
 		user.setPassword(userVO.getPassword());
-		user.setRole(userVO.getRole());
+		user.setRole(1);
 		user.setFullName(userVO.getFullName());
 		user.setCreatedUserId(1);
 		user.setCreatedDate("2018-08-08 00:00:00");

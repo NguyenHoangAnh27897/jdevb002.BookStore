@@ -1,5 +1,6 @@
 package jvb002.bookstore.app.dao.usermanagement;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -21,8 +22,11 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 		Transaction ts = null;
 		try {
 			ts = session.beginTransaction();
-			session.save(user);
-
+			if(user.getId() == 0) {
+				session.save(user);
+			} else { 
+				session.saveOrUpdate(user);
+			}
 		} catch (Exception e) {
 			ts.rollback();
 		} finally {
@@ -33,31 +37,25 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 	}
 
 	@Override
-	public void getUser(int id) {
+	public User getUserById(int id) {
 
 		Session session = getSessionFactory().openSession();
 		Transaction ts = null;
-		try {
-			ts = session.beginTransaction();
-			Query q1 = session.createQuery("from User where id = :id");
-			User user = new User();
-			q1.setParameter("id", id);
-			logger.info("User: " + user.getUserName());
-
-		} catch (Exception e) {
-			ts.rollback();
-		} finally {
-			session.flush();
-			ts.commit();
-			session.close();
-		}
+		User user = new User();
+		ts = session.beginTransaction();
+		Query q1 = session.createQuery("from User where id = :id");
+		q1.setParameter("id", id);
+		logger.info(q1.toString());
+		List data = q1.list();
+		
+		return (User) data.iterator().next();
 	}
 
 	@Override
 	public List<User> userList() {
 		Session session = getSessionFactory().openSession();
 		Transaction ts = null;
-
+		
 		ts = session.beginTransaction();
 		Query q1 = session.createQuery("from User");
 		List<User> userList = q1.list();

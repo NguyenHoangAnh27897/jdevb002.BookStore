@@ -3,6 +3,7 @@ package jvb002.bookstore.app.service.usermanagement;
 
 import jvb002.bookstore.app.dao.usermanagement.UserDAO;
 import jvb002.bookstore.app.dto.UserVO;
+import jvb002.bookstore.app.model.usermanagement.User;
 import jvb002.bookstore.app.util.ConvertUtils;
 
 public class UserServiceImpl implements UserService {
@@ -21,6 +22,10 @@ public class UserServiceImpl implements UserService {
 		this.userDAO = userDAO;
 	}
 
-	
+	public User getUserById(int id) {
+		User user = new User();
+		user = this.userDAO.getUserById(id);
 
+		return user;
+	}
 }
