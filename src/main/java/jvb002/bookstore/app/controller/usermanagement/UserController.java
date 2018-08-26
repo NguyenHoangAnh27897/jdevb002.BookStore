@@ -1,5 +1,10 @@
 package jvb002.bookstore.app.controller.usermanagement;
 
+<<<<<<< HEAD
+=======
+import java.util.List;
+
+>>>>>>> 00588be23cfc467c672bb5888601fb5ecfc22f6d
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +54,7 @@ public class UserController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/user/edit/{id}", method = RequestMethod.GET)
+<<<<<<< HEAD
 	public String editUser(Model model, @PathVariable int id, @ModelAttribute("userVO") UserVO userVO) {
 
 		User user = userService.getUserById(id);
@@ -60,13 +66,54 @@ public class UserController {
 
 		
 		return "bookstore/user/edit";
+=======
+	public String editUser(Model model) {
+
+		// model.addAttribute("userName",)
+		// model.addAttribute("password",)
+		// model.addAttribute("fullName",)
+
+		return "bookstore/user/create";
+>>>>>>> 00588be23cfc467c672bb5888601fb5ecfc22f6d
 	}
 
 	@RequestMapping(value = "/user/user-save", method = RequestMethod.POST)
 	public String save(@ModelAttribute("userVO") UserVO userVO) {
 
+<<<<<<< HEAD
 		userService.insertUser(userVO);
 
+=======
+		// String userName = request.getParameter("userName");
+		// String password = request.getParameter("password");
+		// String fullName = request.getParameter("fullName");
+
+		// UserVO userVO = new UserVO();
+		// userVO.setUserName(userName);
+		// userVO.setFullName(fullName);
+		// userVO.setPassword(password);
+		// userVO.setRole(1);
+		// userVO.setCreatedUserId(1);
+		// userVO.setCreatedDate("2018-08-08 00:00:00");
+
+		userService.insertUser(userVO);
+
+		return "redirect:/";
+	}
+
+	@RequestMapping(value = "/user/list", method = RequestMethod.GET)
+	public String listCustomers(Model model) {
+		model.addAttribute("user", new User());
+		List<User> list = userService.getList();
+		model.addAttribute("listUser", list);
+		return "bookstore/user/list";
+	}
+
+	@RequestMapping("/customer/remove/{id}")
+	public String removeUser(@PathVariable("id") int id) {
+
+		this.userService.deleteUser(id);
+>>>>>>> 00588be23cfc467c672bb5888601fb5ecfc22f6d
 		return "redirect:/";
 	}
 }
