@@ -91,7 +91,7 @@
 
 	<!-- Publisher management -->
 	<beans:bean id="publisherDAO" class="jvb002.bookstore.app.dao.publishermanagement.PublisherDAOImpl">
-		<beans:property name="hibernateTemplate" ref="hibernateTemplate" ></beans:property>
+		<beans:property name="sessionFactory" ref="sessionFactory" ></beans:property>
 	</beans:bean>
 	
 	<beans:bean id="publisherService" class="jvb002.bookstore.app.service.publishermanagement.PublisherServiceImpl">
