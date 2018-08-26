@@ -7,7 +7,9 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import jvb002.bookstore.app.dao.classification.ClassificationDAO;
+import jvb002.bookstore.app.dto.CategoryVO;
 import jvb002.bookstore.app.model.classification.Category;
+import jvb002.bookstore.app.util.ConvertUtils;
 
 @Service
 public class ClassificationServiceImpl implements ClassificationService {
@@ -20,16 +22,16 @@ public class ClassificationServiceImpl implements ClassificationService {
 
 	@Override
 	@Transactional
-	public void save(Category c) {
+	public void save(CategoryVO categoryVO) {
 		// TODO Auto-generated method stub
-		classificationDAO.save(c);
+		classificationDAO.save(ConvertUtils.convertCategoryVOToCategory(categoryVO));
 	}
 
 	@Override
 	@Transactional
-	public void update(Category c) {
+	public void update(CategoryVO categoryVO) {
 		// TODO Auto-generated method stub
-		classificationDAO.update(c);
+		classificationDAO.update(ConvertUtils.convertCategoryVOToCategory(categoryVO));
 	}
 
 	@Override
@@ -50,8 +52,7 @@ public class ClassificationServiceImpl implements ClassificationService {
 	@Transactional
 	public List<Category> getAll() {
 		// TODO Auto-generated method stub
-		return  classificationDAO.getAll();
+		return classificationDAO.getAll();
 	}
-
 
 }
