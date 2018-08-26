@@ -195,3 +195,8 @@ ALTER TABLE `user`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `bookstore`.`user` (`Username`, `Password`, `Role`, `Fullname`, `Created_UserID`, `Created_Date`) VALUES ('User 1', '123456', '1', 'cao thai son', '1', '2018-08-08 00:00:00');
+INSERT INTO `bookstore`.`user` (`Username`, `Password`, `Role`, `Fullname`, `Created_UserID`, `Created_Date`) VALUES ('User 2', '123456', '1', 'cao thai son', '1', '2018-08-08 00:00:00');
+INSERT INTO `bookstore`.`user` (`Username`, `Password`, `Role`, `Fullname`, `Created_UserID`, `Created_Date`) VALUES ('User 3', '123456', '1', 'cao thai son', '1', '2018-08-08 00:00:00');
+
