@@ -29,7 +29,7 @@ public class PublisherDAOImpl implements PublisherDAO {
 
 	@Override
 	public List<Publisher> getDetail() {
-		Session session = sessionFactory.getCurrentSession();
+		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		Query query = session.createQuery("from Publisher");
 		return query.list();
@@ -37,11 +37,12 @@ public class PublisherDAOImpl implements PublisherDAO {
 
 	@Override
 	public void delete(long publishID) {
-		Session session = sessionFactory.getCurrentSession();
+		Session session = sessionFactory.openSession();
 		Publisher publisher = (Publisher) session.load(Publisher.class, publishID);
 		if (publisher != null) {
 			session.delete(publisher);
 		}
+		session.flush();
 	}
 
 	@Override
