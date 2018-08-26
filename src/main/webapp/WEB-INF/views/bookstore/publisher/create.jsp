@@ -7,13 +7,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Update Publisher</title>
+<title>Create Publisher</title>
 </head>
 <body>
 	<div id="content-body" align="center">
-		<h1>Update Publisher</h1>
-		<form:form action="/bookstore/publisher/update" method="POST" commandName="publisher">
-			<form:input type="hidden" id="publishID" path="publishID" value="{publishID}"/>
+		<h1>Create Publisher</h1>
+		<form:form action="createPublisher" method="POST" commandName="publisher">
 			<table>
 				<tr>
 					<td><label>Name:</label></td>
@@ -24,7 +23,7 @@
 					<td><form:textarea rows="3" cols="22" path="description"/></td>
 				</tr>
 				<tr>			
-					<td><input type="submit" id="update"></td>
+					<td><input type="submit" id="create"></td>
 					<td><input type="reset"></td>
 				</tr>
 			</table>

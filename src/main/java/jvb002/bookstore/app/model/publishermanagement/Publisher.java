@@ -27,7 +27,15 @@ public class Publisher {
 	private int createdUserID;
 
 	@Column(name = "Created_Date")
-	private String createdDate;
+	private Date createdDate;
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
 
 	public long getPublishID() {
 		return publishID;
@@ -61,12 +69,6 @@ public class Publisher {
 		this.createdUserID = createdUserID;
 	}
 
-	public String getCreatedDate() {
-		return createdDate;
-	}
 
-	public void setCreatedDate(String createdDate) {
-		this.createdDate = createdDate;
-	}
 
 }

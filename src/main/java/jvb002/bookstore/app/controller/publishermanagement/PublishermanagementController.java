@@ -1,5 +1,6 @@
 package jvb002.bookstore.app.controller.publishermanagement;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
@@ -7,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,9 +22,14 @@ import jvb002.bookstore.app.service.publishermanagement.PublisherService;
 import jvb002.bookstore.app.dto.PublisherVO;
 import jvb002.bookstore.app.service.publishermanagement.PublisherService;
 
+/**
+ * PublisherController Nha -Quan
+ *
+ */
 @Controller
 public class PublishermanagementController {
 	private PublisherService publisherService;
+	private static final Logger logger = LoggerFactory.getLogger(PublishermanagementController.class);
 
 	@Autowired(required = true)
 	@Qualifier(value = "publisherService")
@@ -30,33 +37,31 @@ public class PublishermanagementController {
 		this.publisherService = publisherService;
 	}
 
-	private static final Logger logger = LoggerFactory.getLogger(PublishermanagementController.class);
-
 	@RequestMapping(value = "/publisher/create", method = RequestMethod.GET)
 	public String createView(Locale locale, Model model) {
 		// logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("publisher", new PublisherVO());
-		return "/bookstore/publisher/Create";
+		return "/bookstore/publisher/create";
 	}
 
-	@RequestMapping(value = "/publisher/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/publisher/createPublisher", method = RequestMethod.POST)
 	public String create(@ModelAttribute("publisher") PublisherVO publisherVO) {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
 		java.util.Date date = new java.util.Date();
-		publisherVO.setCreatedDate(format.format(date));
-		//publisherVO.setCreatedUserID(1);
+		formatter.format(date);
+		publisherVO.setCreatedDate(new Date(date.getTime()));
 		publisherService.create(publisherVO);
 		return "redirect:/";
 	}
-	
+
 	@RequestMapping(value = "/publisher/update/{publishID}", method = RequestMethod.GET)
 	public String updateView(@PathVariable("publishID") int id, Model model) {
 		PublisherVO publisherVO = publisherService.getPublisher(id);
 		model.addAttribute("publisher", publisherVO);
-		return "/bookstore/publisher/Update";
+		return "/bookstore/publisher/update";
 	}
 
-	@RequestMapping(value = "/publisher/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/publisher/update/updatePublisher", method = RequestMethod.POST)
 	public String update(@ModelAttribute("publisher") PublisherVO publisherVO) {
 		publisherService.update(publisherVO);
 		return "redirect:/";
