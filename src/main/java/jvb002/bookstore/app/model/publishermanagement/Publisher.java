@@ -28,28 +28,7 @@ public class Publisher {
 	
 	@Column(name="Created_Date")
 	private Date createdDate;
-<<<<<<< HEAD
 
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-
-=======
-	
-	public Publisher() {
-	}
-	public Publisher(long publishID, String name, String description, int createdUserID, Date createdDate) {
-		this.publishID = publishID;
-		this.name = name;
-		this.description = description;
-		this.createdUserID = createdUserID;
-		this.createdDate = createdDate;
-	}
->>>>>>> parent of 3cb1416... [Nhã] Model + PublisherVO + ConvertUtils + Controller
 	public long getPublishID() {
 		return publishID;
 	}
@@ -89,19 +68,12 @@ public class Publisher {
 		this.createdUserID = createdUserID;
 	}
 
-<<<<<<< HEAD
-
-=======
-
 	public Date getCreatedDate() {
 		return createdDate;
 	}
-
 
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 	
->>>>>>> parent of 3cb1416... [Nhã] Model + PublisherVO + ConvertUtils + Controller
-
 }
