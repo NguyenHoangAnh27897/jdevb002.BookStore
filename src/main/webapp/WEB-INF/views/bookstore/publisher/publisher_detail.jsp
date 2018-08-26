@@ -20,7 +20,7 @@ h1 {
 </style>
 <script>
 $(document).ready(function(){
-    $("a2").click(function(){
+    $("a").click(function(){
         alert("Delete successfully.");
     });
 });
@@ -28,7 +28,7 @@ $(document).ready(function(){
 </head>
 <body>
 <h1>DETAIL</h1>
-<a1 href="<c:url value='/publisher/list' />">BACK TO LIST</a1>
+<a href="<c:url value='/publisher/list' />">BACK TO LIST</a>
 <form>
 <table class="table table-striped">
   <thead>
@@ -71,7 +71,7 @@ $(document).ready(function(){
                     <td>${publisher.createdDate}</td>
                     <td>${publisher.description}</td>
                      <td>
-                     <a2 href="<c:url value='/publisher/delete/${publisher.publishID}'/>"> Delete</a2>
+                     <a href="<c:url value='/publisher/delete/${publisher.publishID}'/>"> Delete</a>
                      </td>  
     </tr>
   </thead>
