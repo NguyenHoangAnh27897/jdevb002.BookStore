@@ -65,28 +65,30 @@ public class ConvertUtils {
 		UserVO userVO = new UserVO();
 		return userVO;
 	}
-	
-	public static  Publisher convertPublisherVOToPublisher(PublisherVO publisherVO) {
+
+	public static Publisher convertPublisherVOToPublisher(PublisherVO publisherVO) {
 		Publisher publisher = new Publisher();
-		publisherVO.setPublishID(publisher.getPublishID());
+		publisher.setPublishID(publisherVO.getPublishID());
 		publisher.setName(publisherVO.getName());
 		publisher.setDescription(publisherVO.getDescription());
-		publisher.setCreatedDate(publisherVO.getCreatedDate());
+		//publisher.setCreatedDate(new java.sql.Date(new Date().getTime()));
+//		publisher.setCreatedDate(publisherVO.getCreatedDate());
 		publisher.setCreatedUserID(publisherVO.getCreatedUserID());
 		return publisher;
 	}
-	
+
 	public static PublisherVO convertPublisherToPublisherVO(Publisher publisher) {
 		PublisherVO publisherVO = new PublisherVO();
+		publisherVO.setPublishID(publisher.getPublishID());
 		publisherVO.setName(publisher.getName());
 		publisherVO.setDescription(publisher.getDescription());
+		//publisherVO.setCreatedDate(new SimpleDateFormat("yyyy/MM/dd").format(publisher.getCreatedDate()));
 		publisherVO.setCreatedDate(publisher.getCreatedDate());
 		publisherVO.setCreatedUserID(publisher.getCreatedUserID());
 		return publisherVO;
 	}
-	
-	
-	//-----------------------
+
+	// -----------------------
 	/**
 	 * Convert UserVOToUse
 	 * 
@@ -100,8 +102,8 @@ public class ConvertUtils {
 		category.setCategory_parentID(categoryVO.getCategory_parentID());
 		category.setCreated_date(categoryVO.getCreated_date());
 		category.setCreated_userID(categoryVO.getCreated_userID());
-//		category.setBook(book);(userVO.getCreatedUserId());
-		
+		// category.setBook(book);(userVO.getCreatedUserId());
+
 		return category;
 	}
 
