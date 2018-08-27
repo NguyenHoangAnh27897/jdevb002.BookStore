@@ -1,5 +1,9 @@
 package jvb002.bookstore.app.service.publishermanagement;
 
+/**
+ * PUBLISHER SERVICEImpl
+ * NHA - QUAN
+ */
 import java.util.List;
 
 import jvb002.bookstore.app.dao.publishermanagement.PublisherDAO;
@@ -11,11 +15,11 @@ public class PublisherServiceImpl implements PublisherService {
 
 	private PublisherDAO publisherDAO;
 
-//	@Override
-//	public List<Publisher> getList() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	// @Override
+	// public List<Publisher> getList() {
+	// // TODO Auto-generated method stub
+	// return null;
+	// }
 
 	@Override
 	public List<Publisher> getDetail() {
@@ -38,7 +42,7 @@ public class PublisherServiceImpl implements PublisherService {
 		// TODO Auto-generated method stub
 		return publisherDAO.getPublisherByID(publishID);
 	}
-	
+
 	@Override
 	public void create(PublisherVO publisherVO) {
 		publisherDAO.create(ConvertUtils.convertPublisherVOToPublisher(publisherVO));
@@ -48,7 +52,7 @@ public class PublisherServiceImpl implements PublisherService {
 	public void update(PublisherVO publisherVO) {
 		publisherDAO.update(ConvertUtils.convertPublisherVOToPublisher(publisherVO));
 	}
-	
+
 	@Override
 	public PublisherVO getPublisher(int id) {
 		return publisherDAO.getPublisher(id);

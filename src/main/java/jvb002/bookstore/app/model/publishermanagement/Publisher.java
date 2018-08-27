@@ -1,5 +1,9 @@
 package jvb002.bookstore.app.model.publishermanagement;
 
+/**
+ * PUBLISHER ENTITY
+ * NHA - QUAN
+ */
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -27,7 +31,7 @@ public class Publisher {
 	private int createdUserID;
 
 	@Column(name = "Created_Date")
-	private String createdDate;
+	private Date createdDate;
 
 	public long getPublishID() {
 		return publishID;
@@ -61,11 +65,11 @@ public class Publisher {
 		this.createdUserID = createdUserID;
 	}
 
-	public String getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 

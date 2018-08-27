@@ -1,5 +1,9 @@
 package jvb002.bookstore.app.dto;
 
+/**
+ * PUBLISHER VO
+ * NHA - QUAN
+ */
 import java.sql.Date;
 
 public class PublisherVO {
@@ -11,7 +15,7 @@ public class PublisherVO {
 
 	private int createdUserID;
 
-	private String createdDate;
+	private Date createdDate;
 
 	public long getPublishID() {
 		return publishID;
@@ -45,11 +49,11 @@ public class PublisherVO {
 		this.createdUserID = createdUserID;
 	}
 
-	public String getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 }
